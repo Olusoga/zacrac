@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import helmet from 'helmet';
 import cors from 'cors';
-import * as OpenApiValidator from 'express-openapi-validator';
+// import * as OpenApiValidator from 'express-openapi-validator';
 
 import { PORT } from 'src/configs/app';
 import { errorHandler } from 'src/middlewares/handle-error-code';
@@ -19,9 +19,10 @@ import { init } from 'src/init';
  */
 async function setupRoutes( app: Application ){
 
-  const { healthcheckController } = await init();
+  const { healthcheckController, userController } = await init();
 
   app.use( '/healthcheck', healthcheckController.getRouter() );
+  app.use( '/user', userController.getRouter() );
 
 }
 
@@ -44,11 +45,11 @@ export async function createApp(): Promise<express.Application>{
   // middlewares inside our routes to be logged
   app.use( httpContext.middleware );
 
-  app.use(
-    OpenApiValidator.middleware( {
-      apiSpec: './docs/openapi.yaml',
-    } ),
-  );
+  // app.use(
+  //   OpenApiValidator.middleware( {
+  //     apiSpec: './docs/openapi.yaml',
+  //   } ),
+  // );
 
 
   await setupRoutes( app );
