@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HealthcheckController = void 0;
+/* eslint-disable linebreak-style */
 /* eslint-disable valid-jsdoc */
 const express_1 = require("express");
 class HealthcheckController {
