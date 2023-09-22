@@ -10,9 +10,6 @@ export const PORT = process.env.PORT || '9000';
 
 export const NODE_KEEP_ALIVE_TIMEMOUT_MS = Number( process.env.NODE_KEEP_ALIVE_TIMEMOUT_MS ) || 65_000;
 
-export const LAUNCH_DARKLY_SDK_KEY = process.env.LAUNCH_DARKLY_SDK_KEY || '';
-export const SENTRY_DSN = process.env.SENTRY_DSN || '';
-
 export const IS_PRODUCTION = NODE_ENV === 'production';
 export const IS_LOCAL = NODE_ENV === 'local';
 export const IS_TEST = NODE_ENV === 'test';
