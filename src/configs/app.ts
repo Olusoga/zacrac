@@ -6,7 +6,7 @@
 export const { NODE_ENV, APP_ENV, APP_MODE, DB_URL } = process.env;
 
 export const SERVICE_NAME = process.env.SERVICE_NAME || 'mvp';
-export const PORT = process.env.PORT || '9000';
+export const PORT = process.env.PORT || '5000';
 
 export const NODE_KEEP_ALIVE_TIMEMOUT_MS = Number( process.env.NODE_KEEP_ALIVE_TIMEMOUT_MS ) || 65_000;
 

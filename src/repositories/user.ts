@@ -45,6 +45,12 @@ export class UserRepository{
 
   }
 
+  public async findAllUsers(){
+
+    return await this.model.find();
+
+  }
+
   public async updateUser( query: FilterQuery<IUser>, update: UpdateQuery<IUser>, options: QueryOptions ): Promise<IUser>{
 
     return this.model.findOneAndUpdate( query, update, options );

@@ -48,6 +48,11 @@ export class UserService{
 
   }
 
+  public async findAllUser() {
+
+    return await this.options.userRepository.findAllUsers()
+  }
+
   public async getUserById(id: string) {
 
     const user = await this.options.userRepository.getUser(id)
@@ -74,7 +79,7 @@ export class UserService{
   private async createAccessToken(userId: string, email:string): Promise<string> {
     const expiryTime = moment().add(CONSTANTS.moment.THIRTY, 'minutes');
       const userPayload = { userId, email };
-      const token = jwt.sign(userPayload, JWT_TOKEN_SECRET, {
+      const token = jwt.sign(userPayload, "my-secret", {
           expiresIn: expiryTime.diff(moment(), 'seconds')
       });
       return token;

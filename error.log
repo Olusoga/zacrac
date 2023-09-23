@@ -1,2 +1,16 @@
 {"level":"error","message":{}}
 {"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{"address":"::","code":"EADDRINUSE","errno":-4091,"port":9000,"syscall":"listen"}}
+{"level":"error","message":{}}

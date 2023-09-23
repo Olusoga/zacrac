@@ -1,44 +1,40 @@
 import mongoose from 'mongoose';
 import { DB_URL, IS_LOCAL } from 'src/configs/app';
 import { logger } from './libs/logger';
-import { MongoMemoryServer } from 'mongodb-memory-server'
+import { MongoMemoryServer } from 'mongodb-memory-server';
 
 const getDatabaseUrl = async (): Promise<string> => new Promise(async (resolve, reject) => {
   try {
     if (process.env.NODE_ENV === 'test') {
-      const mongo = await MongoMemoryServer.create();;
+      const mongo = await MongoMemoryServer.create();
       const url = await mongo.getUri();
-       resolve(url);
+      resolve(url);
     }
-    resolve(DB_URL);
+    resolve("mongodb+srv://zrc:zrc@cluster0.5enhd.mongodb.net/");
   } catch (error) {
     reject(error);
   }
 });
 
-export async function connectDb(): Promise<void>{
-
-  try{
-    mongoose.set( 'debug', IS_LOCAL );
-    const url = await getDatabaseUrl()
+export async function connectDb(): Promise<void> {
+  try {
+    mongoose.set('debug', IS_LOCAL);
+    const url = await getDatabaseUrl();
 
     await mongoose.connect(url, {
-      keepAlive:             true,
+      keepAlive: true,
       keepAliveInitialDelay: 300000,
-      autoIndex:             IS_LOCAL
-    } );
-    
-    mongoose.connection.on( 'error', error=>{
+      autoIndex: IS_LOCAL
+    });
 
-      logger.error( error, 'Something went wrong with the connection after the first initialization' );
+    mongoose.connection.on('error', (error) => {
+      logger.error(error, 'Something went wrong with the connection after the first initialization');
+    });
 
-    } );
-
-  } catch( error ){
-
-    logger.error( error, 'Unable to connect to database' );
+    // Connection successful
+    logger.info('Connected to the database successfully');
+  } catch (error) {
+    logger.error(error, 'Unable to connect to the database');
     throw error;
-
   }
-
 }

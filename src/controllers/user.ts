@@ -4,6 +4,7 @@ import { get } from 'lodash';
 import  handleTokenAuthorization  from 'src/middlewares/handle-token-authorization';
 import { ErrorCodes } from 'src/libs/errors';
 import { validateUserCreation } from 'src/middlewares/validation';
+import RedisClient from 'src/redis';
 
 
 interface UserControllerOptions {
@@ -18,7 +19,8 @@ export class UserController{
   constructor( private readonly options: UserControllerOptions ){
 
     this.router = Router();
-    this.router.post( '/', validateUserCreation, this.createUser.bind( this ) );
+    this.router.post( '/', this.createUser.bind( this ) );
+    this.router.get( '/', this.findAllUsers.bind( this ) );
     this.router.get( '/:userId', this.getAsingleUser.bind( this ) );
     this.router.put( '/:userId', this.update.bind( this ) );
     this.router.delete( '/:userId', this.delete.bind( this ) );
@@ -51,12 +53,45 @@ export class UserController{
      
     try {
 
+      const userId = req.params.userId
+
+      const redisKey = `user:${userId}`;
+
+       // Check if the post data is already cached in Redis
+       const cachedData = await RedisClient.get(redisKey);
+ 
+       if (cachedData) {
+         // If data exists in cache, return it directly
+         
+         return res.status(200).json(JSON.parse(cachedData));
+
+       }
+
       const response = await this.options.userService.getUserById(req.params.userId)
+
+      // Store the fetched user data in Redis cache with an expiration (e.g., 1 hour)
+      await RedisClient.setex(redisKey, 3600, JSON.stringify(response))
 
       return res.status( 200 ).json( response );
       
     } catch (error) {
       
+      return next( error );
+
+    }
+
+  }
+
+  public async findAllUsers( req: Request, res: Response, next: NextFunction ): Promise<Response | void>{
+
+    try{
+
+      const response = await this.options.userService.findAllUser();
+
+      return res.status( 201 ).json( response );
+
+    } catch( error ){
+
       return next( error );
 
     }
