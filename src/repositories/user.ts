@@ -12,6 +12,7 @@ export interface CreateUserPayload {
   email:string
   phone_number:string;
   username:string;
+  address:string;
 }
 
 export class UserRepository{

@@ -45,6 +45,7 @@ export class UserService{
       last_name: user.last_name,
       email: user.email,
       phone_number: user.phone_number,
+      address:user.address,
       token
   };
 

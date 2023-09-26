@@ -7,7 +7,8 @@ export const userSchema = new Schema<IUser>( {
   first_name:   { type: String },
   last_name:    { type: String },
   email:        { type: String,  unique: true },
-  phone_number: { type: String, unique: true }
+  phone_number: { type: String, unique: true },
+  address:      { type: String }
 
 } );
 

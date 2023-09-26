@@ -6,6 +6,7 @@ export interface CreateUserPayload {
     token:string;
     email:string;
     phone_number:string;
+    address:string
 }
 
 
@@ -17,10 +18,15 @@ export interface CreateUserResponse {
     token:string;
     email:string;
     phone_number:string;
+    address:string;
 }
 
 export interface UpdateUserPayload {
-    id: string;
-    username:string
-    token:string
+    username: string;
+    first_name: string;
+    last_name: string;
+    email:string;
+    phone_number:string;
+    address:string;
+
 }
