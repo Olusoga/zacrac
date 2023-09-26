@@ -6,12 +6,13 @@ import bodyParser from 'body-parser';
 import compression from 'compression';
 import helmet from 'helmet';
 import cors from 'cors';
-// import * as OpenApiValidator from 'express-openapi-validator';
-
+import * as dotenv from 'dotenv';
 import { PORT } from 'src/configs/app';
 import { errorHandler } from 'src/middlewares/handle-error-code';
-
 import { init } from 'src/init';
+
+dotenv.config();
+
 
 /**
  * Setup the application routes with controllers
@@ -44,13 +45,6 @@ export async function createApp(): Promise<express.Application>{
   // so we can have access to context of all previously installed
   // middlewares inside our routes to be logged
   app.use( httpContext.middleware );
-
-  // app.use(
-  //   OpenApiValidator.middleware( {
-  //     apiSpec: './docs/openapi.yaml',
-  //   } ),
-  // );
-
 
   await setupRoutes( app );
 

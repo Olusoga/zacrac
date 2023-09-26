@@ -44,3 +44,65 @@
 {"level":"info","message":{"env_string":"development","port_number":"5000"}}
 {"level":"info","message":"Connected to the database successfully"}
 {"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":{"email":"johoe@gmail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":{"email":"johoe@gmail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":{"email":"johoe@gmail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":{"email":"lje@gmail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":{"email":"lje@gmail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":{"email":"lje@gmrail.com"}}
+{"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"development","port_number":"5000"}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"error","message":{}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}

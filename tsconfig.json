@@ -10,7 +10,7 @@
         "emitDecoratorMetadata": true,
         "resolveJsonModule": true,
         "noImplicitAny": true,
-        "outDir": "./dist/src",
+        "outDir": "./dist/",
         "baseUrl": ".",
         "paths": {
             "*": ["node_modules/*", "vendor/*"],

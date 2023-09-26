@@ -23,7 +23,7 @@ export class UserService{
 
   public async createUser( createUserPayload: CreateUserPayload ): Promise<CreateUserResponse>{
 
-    const { email,  } = createUserPayload;
+    const { email, first_name, last_name,  username, phone_number  } = createUserPayload;
 
     if( await this.options.userRepository.isUserExist( email ) ){
 
@@ -40,9 +40,11 @@ export class UserService{
 
     return {
       id: user.id,
-      firstname: user.firstname,
-      lastname: user.lastname,
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
       email: user.email,
+      phone_number: user.phone_number,
       token
   };
 
@@ -79,7 +81,7 @@ export class UserService{
   private async createAccessToken(userId: string, email:string): Promise<string> {
     const expiryTime = moment().add(CONSTANTS.moment.THIRTY, 'minutes');
       const userPayload = { userId, email };
-      const token = jwt.sign(userPayload, "my-secret", {
+      const token = jwt.sign(userPayload, 'my-secret', {
           expiresIn: expiryTime.diff(moment(), 'seconds')
       });
       return token;

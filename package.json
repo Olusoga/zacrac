@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./dist/src/server.js",
-    "start:dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node'  src/server.ts",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --exec 'node_modules/.bin/ts-node' src/server.ts",
     "lint": "eslint --ignore-path .eslintignore --ext .ts,.js .",
     "lint:fix": "eslint --ignore-path .eslintignore --ext .ts,.js --fix .",
     "test": "cross-env NODE_ENV=test jest --verbose --runInBand --collectCoverage=true ./tests",
@@ -69,7 +69,7 @@
     "jest": "^26.6.3",
     "jest-extended": "^0.11.5",
     "mongodb-memory-server": "^8.12.2",
-    "nodemon": "^2.0.20",
+    "nodemon": "^2.0.22",
     "ts-jest": "^26.5.6",
     "ts-node": "^10.8.1",
     "ts-node-dev": "^1.1.8",

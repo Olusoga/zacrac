@@ -1,0 +1,37 @@
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: zrc
+      MONGO_INITDB_ROOT_PASSWORD: zrc
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodb-data:/data/db
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+  api:
+    build:
+      context: "."
+      target: "dev"
+    depends_on:
+      - mongodb
+    container_name: 'zacrac'
+    env_file:
+      - ./.env
+    ports:
+      - "5000:5000"
+    environment:
+      - JWT_TOKEN_SECRET=secret
+      - DB_URL = mongodb+srv://zrc:zrc@cluster0.5enhd.mongodb.net/
+      - REDIS_URL=redis://redis:6379
+      - PORT=3000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+volumes:
+  db-data:

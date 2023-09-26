@@ -1,11 +1,6 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import { UserService } from 'src/services/user';
-import { get } from 'lodash';
-import  handleTokenAuthorization  from 'src/middlewares/handle-token-authorization';
-import { ErrorCodes } from 'src/libs/errors';
-import { validateUserCreation } from 'src/middlewares/validation';
 import RedisClient from 'src/redis';
-
 
 interface UserControllerOptions {
     userService: UserService;
@@ -37,8 +32,8 @@ export class UserController{
 
     try{
 
-      const user = req.body
-      const response = await this.options.userService.createUser( user)
+      const data = req.body
+      const response = await this.options.userService.createUser( data )
 
       return res.status( 201 ).json( response );
 

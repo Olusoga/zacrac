@@ -1,18 +1,22 @@
 /* eslint-disable linebreak-style */
 export interface CreateUserPayload {
-    firstname: string;
-    lastname: string;
+    username: string;
+    first_name: string;
+    last_name: string;
     token:string;
     email:string;
+    phone_number:string;
 }
 
 
 export interface CreateUserResponse {
     id: string;
-    firstname:string;
-    lastname:string;
-    email:string;
+    username: string;
+    first_name: string;
+    last_name: string;
     token:string;
+    email:string;
+    phone_number:string;
 }
 
 export interface UpdateUserPayload {

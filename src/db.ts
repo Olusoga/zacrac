@@ -10,7 +10,7 @@ const getDatabaseUrl = async (): Promise<string> => new Promise(async (resolve, 
       const url = await mongo.getUri();
       resolve(url);
     }
-    resolve("mongodb+srv://zrc:zrc@cluster0.5enhd.mongodb.net/");
+    resolve( DB_URL );
   } catch (error) {
     reject(error);
   }

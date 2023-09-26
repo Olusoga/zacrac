@@ -3,10 +3,12 @@ import { Schema } from 'mongoose';
 import { IUser } from 'src/types/user';
 
 export const userSchema = new Schema<IUser>( {
-  firstname: { type: String, required: true, unique: true },
-  lastname:  { type: String, required: true, unique: true },
-  email:     { type: String, required: true, unique: true },
+  username:     { type: String, unique: true },
+  first_name:   { type: String },
+  last_name:    { type: String },
+  email:        { type: String,  unique: true },
+  phone_number: { type: String, unique: true }
 
 } );
 
-userSchema.index( { firstname: 1 }, { unique: true } );
+userSchema.index( { username: 1 }, { unique: true } );

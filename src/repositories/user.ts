@@ -7,9 +7,11 @@ import { IUser } from 'src/types/user';
 import { FilterQuery, UpdateQuery, QueryOptions } from 'mongoose';
 
 export interface CreateUserPayload {
-  firstname: string;
-  lastname: string;
+  first_name: string;
+  last_name: string;
   email:string
+  phone_number:string;
+  username:string;
 }
 
 export class UserRepository{
@@ -51,11 +53,15 @@ export class UserRepository{
 
   }
 
-  public async updateUser( query: FilterQuery<IUser>, update: UpdateQuery<IUser>, options: QueryOptions ): Promise<IUser>{
+  public async updateUser(
+    query: FilterQuery<IUser>,
+    update: UpdateQuery<IUser>,
+    options: QueryOptions    ): Promise<IUser>{
 
     return this.model.findOneAndUpdate( query, update, options );
 
   }
+
   public async deleteUser( existingUser: IUser ){
 
     return this.model.deleteOne( { _id: existingUser.id } );
