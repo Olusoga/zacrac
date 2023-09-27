@@ -80,7 +80,7 @@ npm run test
 
 ## API
 
-There are multiple endpoints that can be used to create an order. Please find below a POSTMAN documentation for easy guide <a href="https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P">https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P</a>.
+There are multiple endpoints that can be used to manage a collection of user profiles. Please find below a POSTMAN documentation for easy guide <a href="https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P">https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P</a>.
 
 # Todo
 
