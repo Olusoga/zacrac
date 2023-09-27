@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response, Router } from 'express';
 import { UserService } from 'src/services/user';
 import RedisClient from 'src/redis';
+import { validateCreateUser } from 'src/middlewares/validation';
 
 interface UserControllerOptions {
     userService: UserService;
@@ -14,7 +15,7 @@ export class UserController{
   constructor( private readonly options: UserControllerOptions ){
 
     this.router = Router();
-    this.router.post( '/', this.createUser.bind( this ) );
+    this.router.post( '/', validateCreateUser, this.createUser.bind( this ) );
     this.router.get( '/', this.findAllUsers.bind( this ) );
     this.router.get( '/:userId', this.getAsingleUser.bind( this ) );
     this.router.put( '/:userId', this.update.bind( this ) );

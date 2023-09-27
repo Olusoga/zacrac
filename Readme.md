@@ -80,12 +80,12 @@ npm run test
 
 ## API
 
-There are multiple endpoints that can be used to create an order. Please find below a POSTMAN documentation for easy guide <a href="https://documenter.getpostman.com/view/7667873/2s93XtzjgW">https://documenter.getpostman.com/view/7667873/2s93XtzjgW</a>.
+There are multiple endpoints that can be used to create an order. Please find below a POSTMAN documentation for easy guide <a href="https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P">https://documenter.getpostman.com/view/19781070/2s9YJZ2j4P</a>.
 
 # Todo
 
 I had a lot of fun building this but there are some improvements I can still make:
-
+- Add Authentication endpoint so I can restrict acces to some endpoints (delete_user and update_user)
 - Add an application Monitoring tool like sentry
 - Add more test cases
 - Have a standard response helper

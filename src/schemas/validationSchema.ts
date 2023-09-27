@@ -19,6 +19,11 @@ export const userRegistrationSchema = Joi.object( {
     .required()
     .description( 'Unique identifier for the user' )
     .example( 'username' ),
+
+  address: Joi.string()
+    .required()
+    .description( 'Unique identifier for the user' )
+    .example( 'address' ),
   phone_number: Joi.string()
     .required()
     .description( 'Unique identifier for the user' )

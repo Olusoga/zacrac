@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from 'express';
 import {   userRegistrationSchema  } from 'src/schemas/validationSchema';
 
 
-export const validateUserCreation = ( req: Request, res: Response, next: NextFunction )=>{
+export const validateCreateUser = ( req: Request, res: Response, next: NextFunction )=>{
 
   const { error } = userRegistrationSchema.validate( req.body );
 
