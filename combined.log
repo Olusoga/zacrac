@@ -116,3 +116,7 @@
 {"level":"info","message":{"env_string":"local","port_number":"5000"}}
 {"level":"info","message":{"email":"ljefty@jgmrail.com"}}
 {"level":"info","message":{"error_code":"DUPLICATE_END_USER","status_code":400}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}
+{"level":"info","message":"Connected to the database successfully"}
+{"level":"info","message":{"env_string":"local","port_number":"5000"}}

@@ -84,7 +84,7 @@ export class UserController{
 
       const response = await this.options.userService.findAllUser();
 
-      return res.status( 201 ).json( response );
+      return res.status( 200 ).json( response );
 
     } catch( error ){
 
@@ -98,6 +98,7 @@ export class UserController{
 
     try{
       const userId = req.params.userId
+      
       const updatedField =req.body
 
       const response = await this.options.userService.update({ _id: userId }, updatedField, { new: true } );

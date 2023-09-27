@@ -8,8 +8,13 @@ export const userSchema = new Schema<IUser>( {
   last_name:    { type: String },
   email:        { type: String,  unique: true },
   phone_number: { type: String, unique: true },
-  address:      { type: String }
+  address:      { type: String },
 
-} );
+},
+{
+  timestamps: true,
+  versionKey: false
+}
+);
 
 userSchema.index( { username: 1 }, { unique: true } );
